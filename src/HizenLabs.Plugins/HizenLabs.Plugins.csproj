@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <ReferenceRustAssemblies>true</ReferenceRustAssemblies>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>Carbon.Plugins</RootNamespace>
+    <!-- Dev builds target Carbon; the bundler emits the Oxide variant separately. -->
+    <DefineConstants>$(DefineConstants);CARBON</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <!-- Carbon assemblies (Carbon.Common etc.). Dev-only: provided by the server at runtime. -->
+    <PackageReference Include="Carbon.Community" Version="2.0.250" PrivateAssets="all" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+</Project>
