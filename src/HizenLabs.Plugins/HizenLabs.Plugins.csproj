@@ -7,7 +7,7 @@
     <ReferenceRustAssemblies>true</ReferenceRustAssemblies>
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <RootNamespace>Carbon.Plugins</RootNamespace>
+    <RootNamespace>HizenLabs.Plugins</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
