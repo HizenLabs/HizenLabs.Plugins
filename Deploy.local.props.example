@@ -1,0 +1,12 @@
+<!-- Copy this to "Deploy.local.props" (git-ignored) and edit it. It is per-developer:
+     opt in to auto-deploy on build. The listed plugin files are copied into the active
+     target server's plugins folder - i.e. whichever Configuration|Platform you build
+     (Release|Carbon -> rust-carbon-release). Paths are anchored to this repo root. -->
+<Project>
+  <PropertyGroup>
+    <DeployEnabled>true</DeployEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <DeployPlugin Include="$(MSBuildThisFileDirectory)src\HizenLabs.Plugins\ServerBroadcast.cs" />
+  </ItemGroup>
+</Project>

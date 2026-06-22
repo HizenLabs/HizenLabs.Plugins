@@ -6,6 +6,10 @@
 
   <!-- The Config x Platform matrix, RustManagedDir, CARBON define, and game/framework
        reference glob all live in shared and come in via the submodule. -->
+  <!-- Per-developer deploy inventory (git-ignored). See Deploy.local.props.example. -->
+  <Import Project="$(MSBuildThisFileDirectory)Deploy.local.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)Deploy.local.props')" />
+
   <Import Project="$(MSBuildThisFileDirectory)shared/Directory.Build.props" />
 
 </Project>
