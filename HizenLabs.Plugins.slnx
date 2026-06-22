@@ -1,10 +1,12 @@
 <Solution>
-  <Folder Name="/shared/" />
-  <Folder Name="/shared/src/">
-    <Project Path="shared/src/HizenLabs.Shared/HizenLabs.Shared.csproj">
-      <BuildType Project="Release" />
-      <Platform Project="Carbon" />
-    </Project>
+  <Configurations>
+    <BuildType Name="Release" />
+    <BuildType Name="Staging" />
+    <Platform Name="Carbon" />
+    <Platform Name="Oxide" />
+  </Configurations>
+  <Folder Name="/shared/">
+    <Project Path="shared/src/HizenLabs.Shared/HizenLabs.Shared.csproj" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/HizenLabs.Plugins/HizenLabs.Plugins.csproj" />
