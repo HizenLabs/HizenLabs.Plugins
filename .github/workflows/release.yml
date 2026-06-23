@@ -1,0 +1,15 @@
+# Publishes a release per plugin whose CHANGELOG.md tops out at a not-yet-released version.
+# All logic lives in the reusable workflow in HizenLabs.Shared so free + premium stay in sync.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/CHANGELOG.md'
+
+jobs:
+  release:
+    uses: HizenLabs/HizenLabs.Shared/.github/workflows/release.yml@main
+    permissions:
+      contents: write
