@@ -1,0 +1,29 @@
+<!-- ===========================================================================
+     Directory.Build.User.props.example  ->  copy to "Directory.Build.User.props" (git-ignored)
+
+     Per-developer build overrides. The only thing you normally set here is RustManagedDir:
+     the folder of exported game + framework managed assemblies that plugins compile against
+     (and, one level up, the plugins/ folder that local deploy copies into).
+
+     By DEFAULT you do NOT need this file. RustManagedDir auto-resolves to THIS repo's own
+     test-env, per target:
+       shared/test-env/docker/servers/rust-<platform>-<config>/refs
+
+     Set it ONLY to point at ANOTHER checkout's running matrix instead of starting your own.
+     The main use: Premium reuses Free's running servers. Build + start.ps1 from the Free
+     checkout once, then in the Premium repo set RustManagedDir to Free's refs (below) so
+     Premium compiles and deploys against the same live containers - no second stack.
+
+     Path is relative to THIS file (the repo root) and keeps the per-target placeholders.
+     The example below assumes Free and Premium are siblings:
+         <plugins>/free
+         <plugins>/premium   <- this file lives here
+     =========================================================================== -->
+<Project>
+  <PropertyGroup>
+    <!-- Premium -> Free (uncomment in the Premium repo): -->
+    <!--
+    <RustManagedDir>$(MSBuildThisFileDirectory)../free/shared/test-env/docker/servers/rust-$(Platform.ToLowerInvariant())-$(Configuration.ToLowerInvariant())/refs</RustManagedDir>
+    -->
+  </PropertyGroup>
+</Project>

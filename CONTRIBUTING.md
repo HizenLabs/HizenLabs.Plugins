@@ -15,3 +15,8 @@ licensing. A bot will prompt you to sign on your first pull request.
 1. Open an issue for anything non-trivial so we can align on the approach first.
 2. Keep changes focused; match the surrounding style.
 3. Open a PR describing what changed and why.
+
+## Local setup
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for building, deploying, and running plugins against
+the test-env.

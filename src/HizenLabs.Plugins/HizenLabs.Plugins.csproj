@@ -8,6 +8,8 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <RootNamespace>HizenLabs.Plugins</RootNamespace>
+    <!-- This is the plugin project: local deploy (Deploy.local.props) runs after THIS builds. -->
+    <DeployTarget>true</DeployTarget>
   </PropertyGroup>
 
   <ItemGroup>

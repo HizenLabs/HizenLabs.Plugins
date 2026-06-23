@@ -1,12 +1,27 @@
-<!-- Copy this to "Deploy.local.props" (git-ignored) and edit it. It is per-developer:
-     opt in to auto-deploy on build. The listed plugin files are copied into the active
-     target server's plugins folder - i.e. whichever Configuration|Platform you build
-     (Release|Carbon -> rust-carbon-release). Paths are anchored to this repo root. -->
+<!-- ===========================================================================
+     Deploy.local.props.example  ->  copy to "Deploy.local.props" (git-ignored)
+
+     Per-developer, opt-in. When DeployEnabled is true, building the plugin project
+     bundles each listed plugin to a single .cs (compile-checked) and copies it into
+     the running test-env server's plugins folder, which hot-reloads it.
+
+     The target server is whichever Configuration|Platform you build:
+       Release|Carbon  -> rust-carbon-release
+       Release|Oxide   -> rust-oxide-release
+       Staging|Carbon  -> rust-carbon-staging
+       Staging|Oxide   -> rust-oxide-staging
+     ...under whatever RustManagedDir points at (see Directory.Build.User.props.example).
+
+     List plugins by NAME only: the .cs filename, no path and no extension. The name is
+     resolved to its source anywhere under src/. See DEVELOPMENT.md for the full walkthrough.
+     =========================================================================== -->
 <Project>
   <PropertyGroup>
     <DeployEnabled>true</DeployEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <DeployPlugin Include="$(MSBuildThisFileDirectory)src\HizenLabs.Plugins\ServerBroadcast.cs" />
+    <!-- One entry per plugin you want deployed. Name only. -->
+    <DeployPlugin Include="MyPlugin" />
+    <!-- <DeployPlugin Include="AnotherPlugin" /> -->
   </ItemGroup>
 </Project>
