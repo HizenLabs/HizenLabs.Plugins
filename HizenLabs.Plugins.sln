@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.7.11911.148 stable
@@ -10,6 +10,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{4F52FD11-658E-A102-6CD3-7D7C16FFA15B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.Shared", "shared\src\HizenLabs.Shared\HizenLabs.Shared.csproj", "{8A172472-B6B1-4907-A92C-401614D9848B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.CodeGen", "shared\src\HizenLabs.CodeGen\HizenLabs.CodeGen.csproj", "{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.Bundler", "shared\src\HizenLabs.Bundler\HizenLabs.Bundler.csproj", "{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.Bundler.Tests", "shared\tests\HizenLabs.Bundler.Tests\HizenLabs.Bundler.Tests.csproj", "{0F416496-67AE-4407-BCB0-B466F882D50F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BAE9FA4D-364B-4699-91CF-13250F2E446F}"
 	ProjectSection(SolutionItems) = preProject
@@ -51,6 +57,30 @@ Global
 		{8A172472-B6B1-4907-A92C-401614D9848B}.Staging|Carbon.Build.0 = Staging|Carbon
 		{8A172472-B6B1-4907-A92C-401614D9848B}.Staging|Oxide.ActiveCfg = Staging|Oxide
 		{8A172472-B6B1-4907-A92C-401614D9848B}.Staging|Oxide.Build.0 = Staging|Oxide
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Release|Carbon.ActiveCfg = Release|Carbon
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Release|Carbon.Build.0 = Release|Carbon
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Release|Oxide.ActiveCfg = Release|Oxide
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Release|Oxide.Build.0 = Release|Oxide
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Staging|Carbon.ActiveCfg = Staging|Carbon
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Staging|Carbon.Build.0 = Staging|Carbon
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Staging|Oxide.ActiveCfg = Staging|Oxide
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49}.Staging|Oxide.Build.0 = Staging|Oxide
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Release|Carbon.ActiveCfg = Release|Carbon
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Release|Carbon.Build.0 = Release|Carbon
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Release|Oxide.ActiveCfg = Release|Oxide
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Release|Oxide.Build.0 = Release|Oxide
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Staging|Carbon.ActiveCfg = Staging|Carbon
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Staging|Carbon.Build.0 = Staging|Carbon
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Staging|Oxide.ActiveCfg = Staging|Oxide
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A}.Staging|Oxide.Build.0 = Staging|Oxide
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Release|Carbon.ActiveCfg = Release|Carbon
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Release|Carbon.Build.0 = Release|Carbon
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Release|Oxide.ActiveCfg = Release|Oxide
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Release|Oxide.Build.0 = Release|Oxide
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Staging|Carbon.ActiveCfg = Staging|Carbon
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Staging|Carbon.Build.0 = Staging|Carbon
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Staging|Oxide.ActiveCfg = Staging|Oxide
+		{0F416496-67AE-4407-BCB0-B466F882D50F}.Staging|Oxide.Build.0 = Staging|Oxide
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +88,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B5F1D952-3583-46FC-A3C2-7C58F89ACBE7} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{8A172472-B6B1-4907-A92C-401614D9848B} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
+		{B5DBBCDE-37C9-446D-AEC8-DEEC76A4BF49} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
+		{E38F78BA-1CBB-4D0E-9F3A-CCBF1CC92B2A} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
+		{0F416496-67AE-4407-BCB0-B466F882D50F} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
 	EndGlobalSection
 EndGlobal
