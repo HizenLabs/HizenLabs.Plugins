@@ -1,17 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11911.148 stable
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.Plugins", "src\HizenLabs.Plugins\HizenLabs.Plugins.csproj", "{B5F1D952-3583-46FC-A3C2-7C58F89ACBE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{4F52FD11-658E-A102-6CD3-7D7C16FFA15B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8535BA8F-DF9C-A316-7699-3D0137456E7C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizenLabs.Shared", "shared\src\HizenLabs.Shared\HizenLabs.Shared.csproj", "{8A172472-B6B1-4907-A92C-401614D9848B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BAE9FA4D-364B-4699-91CF-13250F2E446F}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy.local.props = Deploy.local.props
+		Deploy.local.props.example = Deploy.local.props.example
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,7 +47,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B5F1D952-3583-46FC-A3C2-7C58F89ACBE7} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{8535BA8F-DF9C-A316-7699-3D0137456E7C} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
-		{8A172472-B6B1-4907-A92C-401614D9848B} = {8535BA8F-DF9C-A316-7699-3D0137456E7C}
+		{8A172472-B6B1-4907-A92C-401614D9848B} = {4F52FD11-658E-A102-6CD3-7D7C16FFA15B}
 	EndGlobalSection
 EndGlobal
