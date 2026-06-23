@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-     Directory.Build.User.props.example  ->  copy to "Directory.Build.User.props" (git-ignored)
+     Build.local.props.example  ->  copy to "Build.local.props" (git-ignored)
 
      Per-developer build overrides. The only thing you normally set here is RustManagedDir:
      the folder of exported game + framework managed assemblies that plugins compile against

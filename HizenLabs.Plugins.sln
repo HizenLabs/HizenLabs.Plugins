@@ -20,8 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BAE9FA4D-364B-4699-91CF-13250F2E446F}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		Directory.Build.User.props = Directory.Build.User.props
-		Directory.Build.User.props.example = Directory.Build.User.props.example
+		Build.local.props = Build.local.props
+		Build.local.props.example = Build.local.props.example
 		Deploy.local.props = Deploy.local.props
 		Deploy.local.props.example = Deploy.local.props.example
 		DEVELOPMENT.md = DEVELOPMENT.md

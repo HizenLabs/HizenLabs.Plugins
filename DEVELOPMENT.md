@@ -10,12 +10,12 @@ and Premium repos; they share the same build system (the `shared` submodule).
   src/...                  the plugin project (your .cs plugins live here)
   shared/                  submodule: build props, bundler, test-env (Docker matrix)
   Directory.Build.props    imports your local overrides, then shared
-  Directory.Build.User.props        <- you create this (git-ignored)
+  Build.local.props        <- you create this (git-ignored)
   Deploy.local.props                <- you create this (git-ignored)
   *.example                templates for the two files above
 ```
 
-Both `Directory.Build.User.props` and `Deploy.local.props` are git-ignored and
+Both `Build.local.props` and `Deploy.local.props` are git-ignored and
 per-developer. They are listed in the solution's `build` folder, so Visual Studio shows
 them in the tree even before they exist - a missing one appears greyed out, and you can
 create it from the matching `.example` next to it.
@@ -40,7 +40,7 @@ Start the matrix from `shared/test-env`:
 You usually do NOT need to set this - it defaults to this repo's own test-env. Override it
 only to reuse ANOTHER checkout's running matrix instead of starting your own.
 
-Copy `Directory.Build.User.props.example` to `Directory.Build.User.props` and set
+Copy `Build.local.props.example` to `Build.local.props` and set
 `RustManagedDir`. The main case is Premium reusing Free's servers:
 
 ```xml

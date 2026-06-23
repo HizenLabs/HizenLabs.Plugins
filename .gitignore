@@ -22,7 +22,7 @@ dist/
 Thumbs.db
 
 # Local-only overrides
-Directory.Build.User.props
+Build.local.props
 
 # Per-developer deploy inventory
 Deploy.local.props
