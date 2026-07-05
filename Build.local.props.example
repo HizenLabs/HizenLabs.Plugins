@@ -7,12 +7,13 @@
 
      By DEFAULT you do NOT need this file. RustManagedDir auto-resolves to THIS repo's own
      test-env, per target:
-       shared/test-env/docker/servers/rust-<platform>-<config>/refs
+       shared/test-env/servers/rust-<platform>-<config>/refs
 
-     Set it ONLY to point at ANOTHER checkout's running matrix instead of starting your own.
-     The main use: Premium reuses Free's running servers. Build + start.ps1 from the Free
-     checkout once, then in the Premium repo set RustManagedDir to Free's refs (below) so
-     Premium compiles and deploys against the same live containers - no second stack.
+     Set it ONLY to point at ANOTHER checkout's test-env instead of installing your own.
+     The main use: Premium reuses Free's servers. install.ps1 + start.ps1 from the Free
+     checkout once (install exports the refs), then in the Premium repo set RustManagedDir
+     to Free's refs (below) so Premium compiles and deploys against the same live servers
+     - no second install.
 
      Path is relative to THIS file (the repo root) and keeps the per-target placeholders.
      The example below assumes Free and Premium are siblings:
@@ -23,7 +24,7 @@
   <PropertyGroup>
     <!-- Premium -> Free (uncomment in the Premium repo): -->
     <!--
-    <RustManagedDir>$(MSBuildThisFileDirectory)../free/shared/test-env/docker/servers/rust-$(Platform.ToLowerInvariant())-$(Configuration.ToLowerInvariant())/refs</RustManagedDir>
+    <RustManagedDir>$(MSBuildThisFileDirectory)../free/shared/test-env/servers/rust-$(Platform.ToLowerInvariant())-$(Configuration.ToLowerInvariant())/refs</RustManagedDir>
     -->
   </PropertyGroup>
 </Project>

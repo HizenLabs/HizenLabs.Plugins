@@ -8,7 +8,7 @@ and Premium repos; they share the same build system (the `shared` submodule).
 ```
 <repo>/
   src/...                  the plugin project (your .cs plugins live here)
-  shared/                  submodule: build props, bundler, test-env (Docker matrix)
+  shared/                  submodule: build props, bundler, test-env (local Rust servers)
   Directory.Build.props    imports your local overrides, then shared
   Build.local.props        <- you create this (git-ignored)
   Deploy.local.props                <- you create this (git-ignored)
@@ -23,13 +23,14 @@ create it from the matching `.example` next to it.
 ## The test-env (where managed assemblies come from)
 
 Plugins compile against the game + framework managed assemblies (`Rust`, `Carbon`/`Oxide`,
-etc.). Those are produced by the Docker matrix in `shared/test-env`: each server, on boot,
-exports its managed set to `shared/test-env/docker/servers/rust-<platform>-<config>/refs`.
+etc.). Those come from the local installs in `shared/test-env`: `install.ps1` exports each
+server's managed set to `shared/test-env/servers/rust-<platform>-<config>/refs`.
 
-Start the matrix from `shared/test-env`:
+Install (and start) the servers from `shared/test-env`:
 
 ```powershell
-.\start.ps1                 # all mods x branches
+.\install.ps1               # all mods x branches; exports refs
+.\start.ps1                 # launch, each in its own console window
 .\start.ps1 -Mod Carbon -Branch Release
 ```
 
@@ -38,7 +39,7 @@ Start the matrix from `shared/test-env`:
 ## 1. Choose the managed assemblies directory (RustManagedDir)
 
 You usually do NOT need to set this - it defaults to this repo's own test-env. Override it
-only to reuse ANOTHER checkout's running matrix instead of starting your own.
+only to reuse ANOTHER checkout's test-env instead of installing your own.
 
 Copy `Build.local.props.example` to `Build.local.props` and set
 `RustManagedDir`. The main case is Premium reusing Free's servers:
@@ -46,13 +47,13 @@ Copy `Build.local.props.example` to `Build.local.props` and set
 ```xml
 <Project>
   <PropertyGroup>
-    <RustManagedDir>$(MSBuildThisFileDirectory)../free/shared/test-env/docker/servers/rust-$(Platform.ToLowerInvariant())-$(Configuration.ToLowerInvariant())/refs</RustManagedDir>
+    <RustManagedDir>$(MSBuildThisFileDirectory)../free/shared/test-env/servers/rust-$(Platform.ToLowerInvariant())-$(Configuration.ToLowerInvariant())/refs</RustManagedDir>
   </PropertyGroup>
 </Project>
 ```
 
-With that, you `start.ps1` from the Free checkout only; Premium compiles and deploys
-against those same live containers. No second stack, no clash.
+With that, you install/start from the Free checkout only; Premium compiles and deploys
+against those same live servers. No second install, no clash.
 
 ## 2. Choose which plugins to deploy (Deploy.local.props)
 
